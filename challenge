@@ -1,0 +1,43 @@
+
+
+def cheap_phone(cheap_phone , cheap_price ):
+    return  "De {} is het goedKoopst, de telefoon kost {} Euro".format(cheap_phone  , cheap_price )
+
+def expensive_phone(expensive_phone ,  expensive_price ):
+    return "De {} is het duurst, de telefoon kost {} Euro".format(expensive_phone , expensive_price)
+
+def result( phone , deffrince ):
+    return "Het advies is dus de {} te kopen. Deze is namelijk {} euro goedkoper dan Iphone".format(phone , deffrince )
+
+
+def advise(iphone , samsung  ):
+
+    if iphone > samsung:
+
+        deffrince = iphone - samsung
+
+        if deffrince > 50 :
+            return result( "samsung" , deffrince )
+            
+        else:
+            return result( "iphone" , deffrince )
+            
+    else:
+        deffrince =  samsung - iphone
+        return result( "iphone" , deffrince )
+        
+
+iphone = float(input("Hoe duur is de iphone  : "))
+samsung = float(input("Hoe duur is de samsung  : "))
+print("*************************")
+ 
+
+if iphone < samsung:
+    print(cheap_phone(" iphone " , iphone ))
+    print(expensive_phone(" samsung " , samsung ))
+    print(advise(iphone , samsung  ))
+
+else:
+    print(cheap_phone(" samsung " , samsung))
+    print(expensive_phone( " iphone " , iphone ))
+    print(advise(iphone , samsung  ))
